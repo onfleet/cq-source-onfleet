@@ -47,7 +47,7 @@ func ResolverTransformer(field reflect.StructField, path string) schema.ColumnRe
 
 func SharedTransformers() []transformers.StructTransformerOption {
 	return []transformers.StructTransformerOption{
-		transformers.WithPrimaryKeys("Id"),
+		transformers.WithPrimaryKeys("ID"),
 		transformers.WithResolverTransformer(ResolverTransformer),
 		transformers.WithTypeTransformer(TypeTransformer),
 	}

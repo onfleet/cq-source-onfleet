@@ -1,8 +1,10 @@
 # Table: onfleet_admins
 
+This table shows data for Onfleet Admins.
+
 https://docs.onfleet.com/reference/list-administrators
 
-The primary key for this table is **id**.
+The composite primary key for this table is (**id**, **organization**).
 
 ## Columns
 
@@ -12,16 +14,16 @@ The primary key for this table is **id**.
 |_cq_sync_time|Timestamp|
 |_cq_id|UUID|
 |_cq_parent_id|UUID|
-|id (PK)|String|
-|time_created|Int|
-|time_last_modified|Int|
-|organization|String|
 |email|String|
-|type|String|
-|name|String|
+|id (PK)|String|
+|is_account_owner|Bool|
 |is_active|Bool|
 |is_read_only|Bool|
-|is_account_owner|Bool|
+|metadata|JSON|
+|name|String|
+|organization (PK)|String|
 |phone|String|
 |teams|StringArray|
-|metadata|JSON|
+|time_created|Timestamp|
+|time_last_modified|Timestamp|
+|type|String|

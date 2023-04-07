@@ -1,5 +1,7 @@
 # Table: onfleet_tasks
 
+This table shows data for Onfleet Tasks.
+
 https://docs.onfleet.com/reference/list-tasks
 
 The composite primary key for this table is (**organization_id**, **id**).
@@ -13,32 +15,39 @@ The composite primary key for this table is (**organization_id**, **id**).
 |_cq_id|UUID|
 |_cq_parent_id|UUID|
 |organization_id (PK)|String|
-|id (PK)|String|
-|time_created|Timestamp|
-|time_last_modified|Timestamp|
-|organization|String|
-|short_id|String|
-|tracking_url|String|
-|worker|String|
-|merchant|String|
-|executor|String|
-|creator|String|
-|dependencies|JSON|
-|state|Int|
+|additional_quantities|JSON|
+|appearance|JSON|
+|barcodes|JSON|
 |complete_after|Timestamp|
 |complete_before|Timestamp|
-|service_time|Int|
-|pickup_task|Bool|
-|notes|String|
 |completion_details|JSON|
-|feedback|JSON|
-|metadata|JSON|
-|overrides|JSON|
 |container|JSON|
-|recipients|JSON|
-|estimated_completion_time|Timestamp|
-|estimated_arrival_time|Timestamp|
+|creator|String|
+|delay_time|Float|
+|dependencies|StringArray|
 |destination|JSON|
-|did_auto_assign|Bool|
+|estimated_arrival_time|Timestamp|
+|estimated_completion_time|Timestamp|
+|eta|Int|
+|executor|String|
+|feedback|JSON|
+|id (PK)|String|
+|identity|JSON|
+|merchant|String|
+|metadata|JSON|
+|notes|String|
+|organization|String|
+|overrides|JSON|
+|pickup_task|Bool|
+|quantity|Float|
+|recipients|JSON|
+|scan_only_required_barcodes|Bool|
+|service_time|Float|
+|short_id|String|
+|source_task_id|String|
+|state|Int|
+|time_created|Timestamp|
+|time_last_modified|Timestamp|
+|tracking_url|String|
 |tracking_viewed|Bool|
-|quantity|Int|
+|worker|String|

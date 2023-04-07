@@ -4,7 +4,7 @@ import (
 	"github.com/cloudquery/plugin-sdk/schema"
 	"github.com/cloudquery/plugin-sdk/transformers"
 	"github.com/onfleet/cq-source-onfleet/client"
-	"github.com/onfleet/cq-source-onfleet/internal/go-onfleet/onfleet"
+	onfleet "github.com/onfleet/gonfleet"
 )
 
 func Hubs() *schema.Table {

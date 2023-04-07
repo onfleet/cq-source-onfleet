@@ -10,7 +10,7 @@ import (
 func fetchTeams(ctx context.Context, meta schema.ClientMeta, parent *schema.Resource, res chan<- any) error {
 	cqClient := meta.(*client.Client)
 
-	result, err := cqClient.OnfleetClient.Teams().List(ctx)
+	result, err := cqClient.OnfleetClient.Teams.List()
 	if err != nil {
 		return err
 	}
