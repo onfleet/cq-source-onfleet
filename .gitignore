@@ -1,0 +1,6 @@
+cq-source-onfleet
+.vscode
+.idea
+dist
+cloudquery.log
+
