@@ -1,27 +1,22 @@
 package plugin
 
 import (
-	"github.com/cloudquery/plugin-sdk/plugins/source"
-	"github.com/cloudquery/plugin-sdk/schema"
-	"github.com/onfleet/cq-source-onfleet/client"
-	"github.com/onfleet/cq-source-onfleet/resources"
+	"github.com/cloudquery/plugin-sdk/v4/plugin"
 )
 
-var (
+const (
+	Name    = "cloudquery-onfleet"
+	Kind    = "source"
+	Team    = "onfleet"
 	Version = "development"
 )
 
-func Plugin() *source.Plugin {
-	return source.NewPlugin(
-		"cloudquery-onfleet",
+func Plugin() *plugin.Plugin {
+	return plugin.NewPlugin(
+		Name,
 		Version,
-		schema.Tables{
-			resources.Admins(),
-			resources.Hubs(),
-			resources.Workers(),
-			resources.Tasks(),
-			resources.Teams(),
-		},
-		client.New,
+		Configure,
+		plugin.WithKind(Kind),
+		plugin.WithTeam(Team),
 	)
 }
