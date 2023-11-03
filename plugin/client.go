@@ -2,6 +2,7 @@ package plugin
 
 import (
 	"context"
+	"encoding/json"
 	"fmt"
 	"github.com/cloudquery/plugin-sdk/v4/message"
 	"github.com/cloudquery/plugin-sdk/v4/plugin"
@@ -53,7 +54,31 @@ func (c *Client) Sync(ctx context.Context, options plugin.SyncOptions, res chan<
 }
 
 func Configure(_ context.Context, logger zerolog.Logger, specBytes []byte, opts plugin.NewClientOptions) (plugin.Client, error) {
-	return nil, nil
+	tables, err := getTables()
+	if err != nil {
+		return nil, fmt.Errorf("failed to get tables: %w", err)
+	}
+
+	if opts.NoConnection {
+		return &Client{
+			options: opts,
+			logger:  logger,
+			tables:  tables,
+		}, nil
+	}
+
+	var config client.Spec
+	if err := json.Unmarshal(specBytes, &config); err != nil {
+		return nil, fmt.Errorf("failed to unmarshal plugin spec: %w", err)
+	}
+
+	return &Client{
+		options:   opts,
+		logger:    logger,
+		config:    config,
+		tables:    tables,
+		scheduler: scheduler.NewScheduler(scheduler.WithLogger(logger)),
+	}, nil
 }
 
 func getTables() (schema.Tables, error) {
