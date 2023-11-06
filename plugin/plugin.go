@@ -5,7 +5,7 @@ import (
 )
 
 const (
-	Name    = "cloudquery-onfleet"
+	Name    = "onfleet"
 	Kind    = "source"
 	Team    = "onfleet"
 	Version = "development"

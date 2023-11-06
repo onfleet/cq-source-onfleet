@@ -1,4 +1,4 @@
-# Source Plugin: cloudquery-onfleet
+# Source Plugin: onfleet
 
 ## Tables
 
