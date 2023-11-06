@@ -10,13 +10,11 @@ The composite primary key for this table is (**organization_id**, **id**).
 
 | Name          | Type          |
 | ------------- | ------------- |
-|_cq_source_name|String|
-|_cq_sync_time|Timestamp|
-|_cq_id|UUID|
-|_cq_parent_id|UUID|
-|organization_id (PK)|String|
-|address|JSON|
-|id (PK)|String|
-|location|JSON|
-|name|String|
-|teams|StringArray|
+|_cq_id|`uuid`|
+|_cq_parent_id|`uuid`|
+|organization_id (PK)|`utf8`|
+|address|`json`|
+|id (PK)|`utf8`|
+|location|`list<item: float64, nullable>`|
+|name|`utf8`|
+|teams|`list<item: utf8, nullable>`|

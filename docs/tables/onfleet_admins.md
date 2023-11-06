@@ -10,20 +10,18 @@ The composite primary key for this table is (**id**, **organization**).
 
 | Name          | Type          |
 | ------------- | ------------- |
-|_cq_source_name|String|
-|_cq_sync_time|Timestamp|
-|_cq_id|UUID|
-|_cq_parent_id|UUID|
-|email|String|
-|id (PK)|String|
-|is_account_owner|Bool|
-|is_active|Bool|
-|is_read_only|Bool|
-|metadata|JSON|
-|name|String|
-|organization (PK)|String|
-|phone|String|
-|teams|StringArray|
-|time_created|Timestamp|
-|time_last_modified|Timestamp|
-|type|String|
+|_cq_id|`uuid`|
+|_cq_parent_id|`uuid`|
+|email|`utf8`|
+|id (PK)|`utf8`|
+|is_account_owner|`bool`|
+|is_active|`bool`|
+|is_read_only|`bool`|
+|metadata|`json`|
+|name|`utf8`|
+|organization (PK)|`utf8`|
+|phone|`utf8`|
+|teams|`list<item: utf8, nullable>`|
+|time_created|`time64[us]`|
+|time_last_modified|`time64[us]`|
+|type|`utf8`|

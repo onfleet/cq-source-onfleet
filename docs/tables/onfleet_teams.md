@@ -10,17 +10,15 @@ The composite primary key for this table is (**organization_id**, **id**).
 
 | Name          | Type          |
 | ------------- | ------------- |
-|_cq_source_name|String|
-|_cq_sync_time|Timestamp|
-|_cq_id|UUID|
-|_cq_parent_id|UUID|
-|organization_id (PK)|String|
-|enable_self_assignment|Bool|
-|hub|String|
-|id (PK)|String|
-|managers|StringArray|
-|name|String|
-|tasks|StringArray|
-|time_created|Timestamp|
-|time_last_modified|Timestamp|
-|workers|StringArray|
+|_cq_id|`uuid`|
+|_cq_parent_id|`uuid`|
+|organization_id (PK)|`utf8`|
+|enable_self_assignment|`bool`|
+|hub|`utf8`|
+|id (PK)|`utf8`|
+|managers|`list<item: utf8, nullable>`|
+|name|`utf8`|
+|tasks|`list<item: utf8, nullable>`|
+|time_created|`time64[us]`|
+|time_last_modified|`time64[us]`|
+|workers|`list<item: utf8, nullable>`|
