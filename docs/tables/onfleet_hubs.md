@@ -1,7 +1,5 @@
 # Table: onfleet_hubs
 
-This table shows data for Onfleet Hubs.
-
 https://docs.onfleet.com/reference/list-hubs
 
 The composite primary key for this table is (**organization_id**, **id**).

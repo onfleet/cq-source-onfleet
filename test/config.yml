@@ -1,0 +1,17 @@
+kind: source
+spec:
+  name: "onfleet"
+  path: "./cq-source-onfleet"
+  registry: "local"
+  tables: ["*"]
+  version: "v1.0.0"
+  destinations:
+    - "test"
+  spec:
+    api_key: ""
+---
+kind: destination
+spec:
+  name: test
+  path: cloudquery/test
+  version: "v2.2.3" # latest version of test plugin

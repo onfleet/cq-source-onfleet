@@ -1,7 +1,5 @@
 # Table: onfleet_tasks
 
-This table shows data for Onfleet Tasks.
-
 https://docs.onfleet.com/reference/list-tasks
 
 The composite primary key for this table is (**organization_id**, **id**).

@@ -1,7 +1,5 @@
 # Table: onfleet_admins
 
-This table shows data for Onfleet Admins.
-
 https://docs.onfleet.com/reference/list-administrators
 
 The composite primary key for this table is (**id**, **organization**).

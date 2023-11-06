@@ -26,6 +26,7 @@ kind: source
 spec:
   name: "onfleet"
   path: "onfleet/onfleet"
+  tables: ["*"]
   version: "v1.0.0"
   destinations:
     - "postgresql"
@@ -34,6 +35,11 @@ spec:
     # optional: timestamp to sync tasks from (by default, will only sync last 3 months of tasks)
     # list_tasks_from: "2023-04-01T01:00:00Z"
 ```
+### Plugin Spec
+
+- `api_key` (string, required): The API key
+- `concurrency` (int, optional, default: `1000`): Best effort maximum number of Go routines to use. Lower this number to reduce memory usage.
+- `list_tasks_from` (string timestamp formatted as RFC3339, optional): Timestamp to sync tasks from
 
 ## Development
 

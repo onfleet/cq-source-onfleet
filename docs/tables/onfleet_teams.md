@@ -1,7 +1,5 @@
 # Table: onfleet_teams
 
-This table shows data for Onfleet Teams.
-
 https://docs.onfleet.com/reference/list-teams
 
 The composite primary key for this table is (**organization_id**, **id**).

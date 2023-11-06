@@ -1,7 +1,5 @@
 # Table: onfleet_workers
 
-This table shows data for Onfleet Workers.
-
 https://docs.onfleet.com/reference/list-workers
 
 The composite primary key for this table is (**organization_id**, **id**).
