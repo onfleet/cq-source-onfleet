@@ -20,6 +20,6 @@ The composite primary key for this table is (**id**, **organization**).
 |organization (PK)|`utf8`|
 |phone|`utf8`|
 |teams|`list<item: utf8, nullable>`|
-|time_created|`time64[us]`|
-|time_last_modified|`time64[us]`|
+|time_created|`timestamp[us, tz=UTC]`|
+|time_last_modified|`timestamp[us, tz=UTC]`|
 |type|`utf8`|

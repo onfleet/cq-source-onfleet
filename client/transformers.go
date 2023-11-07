@@ -11,7 +11,7 @@ import (
 
 func TypeTransformer(field reflect.StructField) (arrow.DataType, error) {
 	if isTimestampField(field) {
-		return arrow.FixedWidthTypes.Time64us, nil
+		return arrow.FixedWidthTypes.Timestamp_us, nil
 	}
 
 	return transformers.DefaultTypeTransformer(field)

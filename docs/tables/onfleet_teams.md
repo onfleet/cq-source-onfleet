@@ -17,6 +17,6 @@ The composite primary key for this table is (**organization_id**, **id**).
 |managers|`list<item: utf8, nullable>`|
 |name|`utf8`|
 |tasks|`list<item: utf8, nullable>`|
-|time_created|`time64[us]`|
-|time_last_modified|`time64[us]`|
+|time_created|`timestamp[us, tz=UTC]`|
+|time_last_modified|`timestamp[us, tz=UTC]`|
 |workers|`list<item: utf8, nullable>`|

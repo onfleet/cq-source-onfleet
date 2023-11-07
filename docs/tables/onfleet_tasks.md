@@ -14,16 +14,16 @@ The composite primary key for this table is (**organization_id**, **id**).
 |additional_quantities|`json`|
 |appearance|`json`|
 |barcodes|`json`|
-|complete_after|`time64[us]`|
-|complete_before|`time64[us]`|
+|complete_after|`timestamp[us, tz=UTC]`|
+|complete_before|`timestamp[us, tz=UTC]`|
 |completion_details|`json`|
 |container|`json`|
 |creator|`utf8`|
 |delay_time|`float64`|
 |dependencies|`list<item: utf8, nullable>`|
 |destination|`json`|
-|estimated_arrival_time|`time64[us]`|
-|estimated_completion_time|`time64[us]`|
+|estimated_arrival_time|`timestamp[us, tz=UTC]`|
+|estimated_completion_time|`timestamp[us, tz=UTC]`|
 |eta|`int64`|
 |executor|`utf8`|
 |feedback|`json`|
@@ -42,8 +42,8 @@ The composite primary key for this table is (**organization_id**, **id**).
 |short_id|`utf8`|
 |source_task_id|`utf8`|
 |state|`int64`|
-|time_created|`time64[us]`|
-|time_last_modified|`time64[us]`|
+|time_created|`timestamp[us, tz=UTC]`|
+|time_last_modified|`timestamp[us, tz=UTC]`|
 |tracking_url|`utf8`|
 |tracking_viewed|`bool`|
 |worker|`utf8`|
