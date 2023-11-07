@@ -30,6 +30,8 @@ spec:
     api_key: "${ONFLEET_API_KEY}"
     # optional: timestamp to sync tasks from (by default, will only sync last 3 months of tasks)
     # list_tasks_from: "2023-04-01T01:00:00Z"
+    # optional: concurrency setting
+    # concurrency: 1000
 ```
 ### Plugin Spec
 
