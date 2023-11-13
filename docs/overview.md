@@ -17,13 +17,14 @@ The API key needs to be provided in the `api_key` configuration parameter (see b
 The following source configuration file will sync to a PostgreSQL database. It uses an API key provided in the `ONFLEET_API_KEY` environment variable.
 See [the CloudQuery Quickstart](https://www.cloudquery.io/docs/quickstart) for more information on how to configure the source and destination.
 
-```yaml
+```yaml copy
 kind: source
 spec:
   name: "onfleet"
   path: "onfleet/onfleet"
+  registry: "cloudquery"
   tables: ["*"]
-  version: "v1.0.0"
+  version: "v2.0.0"
   destinations:
     - "postgresql"
   spec:
