@@ -3,4 +3,6 @@ cq-source-onfleet
 .idea
 dist
 cloudquery.log
-
+sync.yml
+.cq
+cloudquery

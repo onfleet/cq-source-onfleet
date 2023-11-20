@@ -1,16 +1,17 @@
 package client
 
 import (
+	"github.com/apache/arrow/go/v14/arrow"
 	"reflect"
 
-	"github.com/cloudquery/plugin-sdk/schema"
-	"github.com/cloudquery/plugin-sdk/transformers"
+	"github.com/cloudquery/plugin-sdk/v4/schema"
+	"github.com/cloudquery/plugin-sdk/v4/transformers"
 	"golang.org/x/exp/slices"
 )
 
-func TypeTransformer(field reflect.StructField) (schema.ValueType, error) {
+func TypeTransformer(field reflect.StructField) (arrow.DataType, error) {
 	if isTimestampField(field) {
-		return schema.TypeTimestamp, nil
+		return arrow.FixedWidthTypes.Timestamp_us, nil
 	}
 
 	return transformers.DefaultTypeTransformer(field)

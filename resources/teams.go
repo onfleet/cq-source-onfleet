@@ -1,8 +1,9 @@
 package resources
 
 import (
-	"github.com/cloudquery/plugin-sdk/schema"
-	"github.com/cloudquery/plugin-sdk/transformers"
+	"github.com/apache/arrow/go/v14/arrow"
+	"github.com/cloudquery/plugin-sdk/v4/schema"
+	"github.com/cloudquery/plugin-sdk/v4/transformers"
 	"github.com/onfleet/cq-source-onfleet/client"
 	onfleet "github.com/onfleet/gonfleet"
 )
@@ -16,12 +17,10 @@ func Teams() *schema.Table {
 			client.SharedTransformers()...),
 		Columns: []schema.Column{
 			{
-				Name:     "organization_id",
-				Type:     schema.TypeString,
-				Resolver: client.ResolveOrganizationId,
-				CreationOptions: schema.ColumnCreationOptions{
-					PrimaryKey: true,
-				},
+				Name:       "organization_id",
+				Type:       arrow.BinaryTypes.String,
+				Resolver:   client.ResolveOrganizationId,
+				PrimaryKey: true,
 			},
 		},
 	}

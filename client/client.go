@@ -1,13 +1,10 @@
 package client
 
 import (
-	"context"
 	"fmt"
 	"time"
 
-	"github.com/cloudquery/plugin-sdk/plugins/source"
-	"github.com/cloudquery/plugin-sdk/schema"
-	"github.com/cloudquery/plugin-sdk/specs"
+	"github.com/cloudquery/plugin-sdk/v4/schema"
 	onfleetclient "github.com/onfleet/gonfleet/client"
 	"github.com/rs/zerolog"
 )
@@ -28,13 +25,7 @@ func (c *Client) ID() string {
 	return "org:" + c.OrganizationId
 }
 
-func New(ctx context.Context, logger zerolog.Logger, s specs.Source, opts source.Options) (schema.ClientMeta, error) {
-	var pluginSpec Spec
-
-	if err := s.UnmarshalSpec(&pluginSpec); err != nil {
-		return nil, fmt.Errorf("failed to unmarshal plugin spec: %w", err)
-	}
-
+func New(logger zerolog.Logger, pluginSpec Spec) (schema.ClientMeta, error) {
 	if pluginSpec.ApiKey == "" {
 		return nil, fmt.Errorf("API key not provided. Please provided it in the 'api_key' configuration option - See (https://github.com/onfleet/cq-source-onfleet/blob/master/README.md)")
 	}

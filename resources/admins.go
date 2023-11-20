@@ -1,8 +1,8 @@
 package resources
 
 import (
-	"github.com/cloudquery/plugin-sdk/schema"
-	"github.com/cloudquery/plugin-sdk/transformers"
+	"github.com/cloudquery/plugin-sdk/v4/schema"
+	"github.com/cloudquery/plugin-sdk/v4/transformers"
 	"github.com/onfleet/cq-source-onfleet/client"
 	onfleet "github.com/onfleet/gonfleet"
 )
