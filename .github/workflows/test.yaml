@@ -19,21 +19,22 @@ jobs:
         uses: actions/setup-go@v3
         with:
           go-version-file: go.mod
-          cache: true
+          cache: false
       - name: Get dependencies
         run: |
-          go mod download
+          go env
+          go mod download -x
           go mod tidy
           go list -m all
       - name: Build
-        run: go build ./...
+        run: go build -v ./...
       - name: golangci-lint
         uses: golangci/golangci-lint-action@v3
         with:
           version: v1.55.1
           args: --timeout=3m --verbose
-          skip-pkg-cache: false
-          skip-build-cache: false
+          skip-pkg-cache: true
+          skip-build-cache: true
           working-directory: .
       - name: Setup CloudQuery
         if: github.event_name == 'pull_request'
