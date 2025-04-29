@@ -23,6 +23,7 @@ jobs:
       - name: Get dependencies
         run: |
           go env
+          go get github.com/thoas/go-funk@v0.9.3
           go mod download -x
           go mod tidy
           go list -m all
