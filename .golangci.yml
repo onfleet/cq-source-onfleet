@@ -1,3 +1,5 @@
+version: 1
+
 linters:
   enable:
     - errcheck
@@ -7,6 +9,10 @@ linters:
     - staticcheck
     - unused
 
+linters-settings:
+  govet:
+    check-shadowing: true
+
 run:
   skip-dirs:
     - vendor
@@ -14,6 +20,7 @@ run:
     - docs
 
 issues:
+  exclude-use-default: false
   exclude-rules:
     - path: _test\.go
       linters:
