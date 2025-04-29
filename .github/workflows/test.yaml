@@ -21,7 +21,9 @@ jobs:
           go-version-file: go.mod
           cache: true
       - name: Get dependencies
-        run: go mod tidy
+        run: |
+          go mod download
+          go mod tidy
       - name: golangci-lint
         uses: golangci/golangci-lint-action@v3
         with:
